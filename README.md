@@ -60,7 +60,7 @@ Building
 --------
 
 - Run `dotnet build GitVersionTree.sln` (or use your IDE) to compile/run on any desktop platform.
-- To package a macOS `.app` bundle, execute `./scripts/build-macos-app.sh [osx-arm64|osx-x64]`. The script publishes a self-contained build, converts `GitVersionTree/main.ico` into the proper `.icns` bundle icon (requires macOS `sips` plus Python 3), and assembles `dist/macos-<rid>/GitVersionTree.app`, which you can copy into `/Applications` or distribute via zip.
+- To package a macOS `.app` bundle, execute `./scripts/build-macos-app.sh [osx-arm64|osx-x64|osx-universal|osx-all]`. The script publishes a self-contained build, converts `GitVersionTree/main.ico` into the proper `.icns` bundle icon (requires macOS `sips`, Python 3, and `lipo` when targeting `osx-universal`), assembles `dist/macos-<rid>/GitVersionTree.app`, and creates a ready-to-distribute `GitVersionTree_macos-<rid>.zip`. Use `osx-all` to generate every variant in one go. Running `osx-universal` directly cleans up the intermediate arm64/x64 publish directories once the universal bundle is produced (they are preserved when `osx-all` orchestrates the build).
 
 Pending
 -------
