@@ -1,0 +1,108 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="GitVersionTree.Views.MainWindow"
+        Width="640"
+        Height="520"
+        MinWidth="500"
+        MinHeight="420"
+        Title="GitVersionTree">
+  <Grid RowDefinitions="Auto,Auto,*,Auto"
+        Margin="16">
+    <Border Padding="12"
+            BorderBrush="#DDD"
+            BorderThickness="1"
+            CornerRadius="6"
+            Margin="0,0,0,12">
+      <StackPanel Spacing="8">
+        <TextBlock Text="Path Configuration"
+                   FontWeight="SemiBold"/>
+        <Grid ColumnDefinitions="Auto,*,Auto"
+              RowDefinitions="Auto,Auto">
+          <TextBlock Text="Git Path:"
+                     VerticalAlignment="Center"/>
+          <TextBox x:Name="GitPathTextBox"
+                   Grid.Column="1"
+                   Margin="8,0"/>
+          <Button Grid.Column="2"
+                  Margin="8,0,0,0"
+                  Content="Browse"
+                  Click="OnGitPathBrowseClicked"/>
+
+          <TextBlock Grid.Row="1"
+                     Text="Graphviz Dot Path:"
+                     Margin="0,8,0,0"
+                     VerticalAlignment="Center"/>
+          <TextBox x:Name="GraphvizDotPathTextBox"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Margin="8,8,8,0"/>
+          <Button Grid.Row="1"
+                  Grid.Column="2"
+                  Margin="8,8,0,0"
+                  Content="Browse"
+                  Click="OnGraphvizPathBrowseClicked"/>
+        </Grid>
+      </StackPanel>
+    </Border>
+
+    <Border Grid.Row="1"
+            Padding="12"
+            BorderBrush="#DDD"
+            BorderThickness="1"
+            CornerRadius="6"
+            Margin="0,0,0,12">
+      <StackPanel Spacing="8">
+        <TextBlock Text="Target Path"
+                   FontWeight="SemiBold"/>
+        <Grid ColumnDefinitions="Auto,*,Auto">
+          <TextBlock Text="Repository Path:"
+                     VerticalAlignment="Center"/>
+          <TextBox x:Name="GitRepositoryPathTextBox"
+                   Grid.Column="1"
+                   Margin="8,0"/>
+          <Button Grid.Column="2"
+                  Margin="8,0,0,0"
+                  Content="Browse"
+                  Click="OnRepositoryBrowseClicked"/>
+        </Grid>
+      </StackPanel>
+    </Border>
+
+    <Border Grid.Row="2"
+            Padding="12"
+            BorderBrush="#DDD"
+            BorderThickness="1"
+            CornerRadius="6">
+      <StackPanel Spacing="8">
+        <TextBlock Text="Status"
+                   FontWeight="SemiBold"/>
+        <TextBox x:Name="StatusTextBox"
+                 AcceptsReturn="True"
+                 ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 IsReadOnly="True"
+                 TextWrapping="Wrap"/>
+      </StackPanel>
+    </Border>
+
+    <Grid Grid.Row="3"
+          ColumnDefinitions="*,Auto,Auto">
+      <TextBlock Text="Project homepage"
+                 VerticalAlignment="Center"
+                 Foreground="Blue"
+                 TextDecorations="Underline"
+                 Cursor="Hand"
+                 PointerPressed="OnHomepageLinkClicked"/>
+
+      <Button Grid.Column="1"
+              Content="Generate"
+              Width="100"
+              x:Name="GenerateButton"
+              Click="OnGenerateClicked"/>
+      <Button Grid.Column="2"
+              Content="Exit"
+              Width="80"
+              Click="OnExitClicked"/>
+    </Grid>
+  </Grid>
+</Window>

@@ -1,7 +1,7 @@
 GitVersionTree
 --------------
 
-A tool to help visualize git revisions and branches.
+A cross-platform desktop tool (now powered by [Avalonia UI](https://avaloniaui.net/)) to help visualize git revisions and branches on Windows, macOS, and Linux.
 
 Introduction
 ------------
@@ -46,15 +46,15 @@ Project Status
 Requirement
 -----------
 
-This tool required or need:
+This tool requires:
 
 - [Git](http://git-scm.com/)
-- [Graphviz](http://www.graphviz.org/)
-- [Microsoft(c) .Net Framework 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=17718)
-- [Any PDF reader/viewer](http://get.adobe.com/reader/)
-- [Postscript viewer](https://projects.gnome.org/evince/) (optional)
+- [Graphviz](http://www.graphviz.org/) (only the `dot` executable is needed)
+- [.NET 8 SDK](https://dotnet.microsoft.com/) or newer
+- Any PDF reader/viewer
+- A Postscript viewer (optional)
 
-This project was compile using Microsoft(c) Visual Studio 2010 Express Edition.
+The app now targets .NET 8 with Avalonia so it can run on Windows, macOS, and Linux. Use `dotnet build` (or your IDE) to restore the NuGet packages and run the cross-platform UI.
 
 Pending
 -------
