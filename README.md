@@ -56,6 +56,12 @@ This tool requires:
 
 The app now targets .NET 8 with Avalonia so it can run on Windows, macOS, and Linux. Use `dotnet build` (or your IDE) to restore the NuGet packages and run the cross-platform UI.
 
+Building
+--------
+
+- Run `dotnet build GitVersionTree.sln` (or use your IDE) to compile/run on any desktop platform.
+- To package a macOS `.app` bundle, execute `./scripts/build-macos-app.sh [osx-arm64|osx-x64]`. The script publishes a self-contained build, converts `GitVersionTree/main.ico` into the proper `.icns` bundle icon (requires macOS `sips` plus Python 3), and assembles `dist/macos-<rid>/GitVersionTree.app`, which you can copy into `/Applications` or distribute via zip.
+
 Pending
 -------
 

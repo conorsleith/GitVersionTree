@@ -7,6 +7,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>main.ico</ApplicationIcon>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <RuntimeIdentifiers>win-x64;linux-x64;osx-x64;osx-arm64</RuntimeIdentifiers>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' == 'osx-x64' or '$(RuntimeIdentifier)' == 'osx-arm64'">
+    <UseMacOSEntryPoint>true</UseMacOSEntryPoint>
   </PropertyGroup>
 
   <ItemGroup>
