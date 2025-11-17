@@ -147,7 +147,7 @@ PY
 )"
 
 if [ -z "$VERSION" ]; then
-  VERSION="1.0.0"
+  VERSION="2.0.1-alpha"
 fi
 
 cat > "$CONTENTS_DIR/Info.plist" <<EOF

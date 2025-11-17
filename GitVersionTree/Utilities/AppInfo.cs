@@ -10,5 +10,5 @@ internal static class AppInfo
 
     public static string ProductVersion { get; } =
         EntryAssembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion
-        ?? EntryAssembly.GetName().Version?.ToString() ?? "1.0.0";
+        ?? EntryAssembly.GetName().Version?.ToString() ?? "2.0.1-alpha";
 }
